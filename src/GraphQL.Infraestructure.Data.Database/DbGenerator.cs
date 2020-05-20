@@ -46,7 +46,7 @@ namespace GraphQL.Infraestructure.Data.Database
                         City = "Campinas",
                         Name = "Pinho TI LTDA",
                         Phone = "(31) 4455-6587",
-                        Site = "tipinho.com.br"
+                        Site = "pinhoti.com.br"
                     }
                 );
                 context.SaveChanges();
