@@ -1,4 +1,4 @@
-﻿namespace GraphQL.Infraestructure.Data.Database
+﻿namespace GraphQL.Infraestructure.Data.Database.Entity.Campany
 {
     public class CompanyFilter
     {

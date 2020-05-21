@@ -1,9 +1,9 @@
-﻿using System;
+﻿using GraphQL.Infraestructure.Data.Database.Entity.Department;
 using System.Collections.Generic;
 
-namespace GraphQL.Infraestructure.Data.Database.Entity
+namespace GraphQL.Infraestructure.Data.Database.Entity.Campany
 {
-    public class Company
+    public class CompanyEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -11,6 +11,6 @@ namespace GraphQL.Infraestructure.Data.Database.Entity
         public string CNPJ { get; set; }
         public string Phone { get; set; }
         public string Site { get; set; }
-        public virtual ICollection<Post> Posts { get; set; }
+        public ICollection<DepartmentEntity> Departments { get; set; }
     }
 }

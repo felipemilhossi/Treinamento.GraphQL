@@ -1,8 +1,6 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using GraphQL.API.Queries;
-using GraphQL.Infraestructure.Data.Database;
+﻿using GraphQL.API.Queries;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace GraphQL.API.Controllers
 {
@@ -38,6 +36,5 @@ namespace GraphQL.API.Controllers
 
             return Ok(result);
         }
-
     }
 }

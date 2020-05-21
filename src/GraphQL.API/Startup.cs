@@ -6,6 +6,9 @@ using GraphiQl;
 using GraphQL.API.Queries;
 using GraphQL.API.Types;
 using GraphQL.Infraestructure.Data.Database;
+using GraphQL.Infraestructure.Data.Database.Entity.Campany;
+using GraphQL.Infraestructure.Data.Database.Entity.Department;
+using GraphQL.Infraestructure.Data.Database.Entity.Employee;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,9 +36,13 @@ namespace GraphQL.API
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSingleton<IDependencyResolver>(s => new FuncDependencyResolver(s.GetRequiredService));//para poder injetar repositório na classe BlogQuery
             services.AddTransient<CompanyRepository, CompanyRepository>();
+            services.AddTransient<DepartmentRepository, DepartmentRepository>();
+            services.AddTransient<EmployeeRepository, EmployeeRepository>();
             services.AddScoped<BlogSchema>();
             services.AddScoped<BlogQuery>();
             services.AddScoped<CompanyType>();
+            services.AddScoped<DepartmentType>();
+            services.AddScoped<EmployeeType>();
             services.AddDbContext<BlogContext>(opcoes => opcoes.UseInMemoryDatabase(databaseName: "Blog"));
         }
 

@@ -1,12 +1,12 @@
-﻿using GraphQL.Infraestructure.Data.Database;
-using GraphQL.Infraestructure.Data.Database.Entity;
+﻿using GraphQL.Infraestructure.Data.Database.Entity.Campany;
+using GraphQL.Infraestructure.Data.Database.Entity.Department;
 using GraphQL.Types;
 
 namespace GraphQL.API.Types
 {
-    public class CompanyType : ObjectGraphType<Company>
+    public class CompanyType : ObjectGraphType<CompanyEntity>
     {
-        public CompanyType()
+        public CompanyType(DepartmentRepository departmentRepository)
         {
             Name = "Company";
             Field(x => x.Id, type: typeof(IdGraphType)).Description("Company Id");
@@ -15,6 +15,11 @@ namespace GraphQL.API.Types
             Field(x => x.Phone).Description("Company Phone");
             Field(x => x.City).Description("Company City");
             Field(x => x.Site).Description("Company Site");
+
+            Field("Departments",
+                x => departmentRepository.GetDepartmentByCompanyId(x.Id),
+                nullable: true,
+                type: typeof(ListGraphType<DepartmentType>)).Description("Company departments");
         }
     }
 }

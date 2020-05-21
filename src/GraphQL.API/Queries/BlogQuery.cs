@@ -1,5 +1,5 @@
 ﻿using GraphQL.API.Types;
-using GraphQL.Infraestructure.Data.Database;
+using GraphQL.Infraestructure.Data.Database.Entity.Campany;
 using GraphQL.Types;
 
 namespace GraphQL.API.Queries
@@ -23,7 +23,6 @@ namespace GraphQL.API.Queries
                     };
                     return repositorio.Get(filtro);
                 }
-
             );
         }
     }

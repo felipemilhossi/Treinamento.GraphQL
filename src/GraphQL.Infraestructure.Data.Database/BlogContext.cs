@@ -1,4 +1,6 @@
-﻿using GraphQL.Infraestructure.Data.Database.Entity;
+﻿using GraphQL.Infraestructure.Data.Database.Entity.Campany;
+using GraphQL.Infraestructure.Data.Database.Entity.Department;
+using GraphQL.Infraestructure.Data.Database.Entity.Employee;
 using Microsoft.EntityFrameworkCore;
 
 namespace GraphQL.Infraestructure.Data.Database
@@ -9,6 +11,8 @@ namespace GraphQL.Infraestructure.Data.Database
         {
         }
 
-        public DbSet<Company> Companies { get; set; }
+        public DbSet<CompanyEntity> Companies { get; set; }
+        public DbSet<DepartmentEntity> Departments { get; set; }
+        public DbSet<EmployeeEntity> Employees { get; set; }
     }
 }
